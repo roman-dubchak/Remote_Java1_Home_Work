@@ -43,8 +43,7 @@ public class lesson1 {
         return "Привет, " + name + "!";
     }
 
-    public static boolean methodTask5(int year) { // task 3 через булиан
+    public static boolean methodTask5(int year) { // task 5*
         return (year % 4 == 0 && year % 100 == 0 || year % 400 == 0);
     }
-
 }
