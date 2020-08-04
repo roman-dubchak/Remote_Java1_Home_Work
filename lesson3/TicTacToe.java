@@ -87,21 +87,41 @@ public class TicTacToe {
     }
 
     private static boolean checkWin(char c) {
-        // hor
-        if (field[0][0] == c && field[0][1] == c && field[0][2] == c) return true;
-        if (field[1][0] == c && field[1][1] == c && field[1][2] == c) return true;
-        if (field[2][0] == c && field[2][1] == c && field[2][2] == c) return true;
+        char a = 0, b = 0,d = 0, i = 0, j = 0, e = 0, k = 0, r = 0, h = 0, g = 0;
 
-        // ver
-        if (field[0][0] == c && field[1][0] == c && field[2][0] == c) return true;
-        if (field[0][1] == c && field[1][1] == c && field[2][1] == c) return true;
-        if (field[0][2] == c && field[1][2] == c && field[2][2] == c) return true;
+        // hor
+//        if (field[0][0] == c && field[0][1] == c && field[0][2] == c) return true;
+//        if (field[1][0] == c && field[1][1] == c && field[1][2] == c) return true;
+//        if (field[2][0] == c && field[2][1] == c && field[2][2] == c) return true;
+//
+//        // ver
+//        if (field[0][0] == c && field[1][0] == c && field[2][0] == c) return true;
+//        if (field[0][1] == c && field[1][1] == c && field[2][1] == c) return true;
+//        if (field[0][2] == c && field[1][2] == c && field[2][2] == c) return true;
 
         // dia
-        if (field[0][0] == c && field[1][1] == c && field[2][2] == c) return true;
-        if (field[0][2] == c && field[1][1] == c && field[2][0] == c) return true;
-        return false;
+//        if (field[0][0] == c && field[1][1] == c && field[2][2] == c) return true;
+//        if (field[0][2] == c && field[1][1] == c && field[2][0] == c) return true;
 
+        for (int y = 0; y < field.length; y++) {
+            for (int x = 0; x < field.length; x++) {
+                int l = field.length - 1;
+                a = field[y][y];
+                e = field[x][x];
+                b = field[y][x];
+                d = field[x][y];
+                i = field[x][l];
+                j = field[x][l - x];
+                k = field[l - x][x];
+                r = field[y][l];
+                h = field[y][l - y];
+                g = field[l - y][y];
+
+                if (c == e && c == k && c == i || c == e && c == d && c == i || c == a && c == e && c == r) // и так далее
+                    return true;
+            }
+        }
+            return false;
     }
 
     public static void main(String[] args) {
