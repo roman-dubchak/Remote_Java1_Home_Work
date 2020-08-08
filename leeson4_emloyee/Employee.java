@@ -1,16 +1,23 @@
 package repo_java1_Home_Work.leeson4_emloyee;
 
 public class Employee {
+
+    private static final int CURRENT_YEAR = 2020;
+
     private String fio;
     private float salary;
     private int age;
-    private int id;
+    private int birthYear;
+    boolean isSalaryChanged;
+    private static int id = 0; // статик хронит занчение в классе
+    public int uid; // хронит занчение id++ в созданом объекте
 
 
-    Employee(String fio, float salary, int age){
+    Employee(String fio, float salary, int birthYear){
         this.fio = fio;
         this.salary = salary;
-        this.age = age;
+        this.birthYear = birthYear;
+        this.uid = id++;
     }
 
     public String getFio() {
@@ -22,40 +29,19 @@ public class Employee {
     }
 
     public int getAge() {
-        return this.age;
+        return CURRENT_YEAR - birthYear;
     }
 
-    private float getUpSalary(){
-        return this.salary += 5000.00f; // можно содать сеттер с заданым дополнительным полем "Премия" = 5000.00f
+    public void setUpSalary(float dif){
+        this.salary += dif;
     }
 
-    void salaryUp (Employee[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i].getAge() > 45) {
-                arr[i].getUpSalary();
-                System.out.println("For employee: " + arr[i].getFio() + " " + arr[i].getAge() + " years" // for check
-                        + " the new salary: " + arr[i].getSalary() + "!");
-            }
-        }
-    }
+    String getFullInfo(){
+        return " id " +
+                this.uid + "; " +
+                this.fio + "; " +
+                this.getAge() + " years old" + ". Salary is " +
+                this.salary + " RUR.";
 
-    float averageSalary (Employee[] arr){
-        float sumSalary = 0.0f, averageS = 0;
-        for (int i = 0; i < arr.length; i++) {
-            sumSalary = sumSalary + arr[i].getSalary();
-        }
-        averageS = sumSalary / arr.length;
-        System.out.println("The average salary of all employees is " + averageS);
-        return averageS;
-    }
-
-    float averageAge (Employee[] arr){
-        float sumAge = 0.0f, averageA = 0;
-        for (int i = 0; i < arr.length; i++) {
-            sumAge = sumAge + arr[i].getAge();
-        }
-        averageA = sumAge / arr.length;
-        System.out.println("The average age of all employees is " + averageA);
-        return averageA;
     }
 }
