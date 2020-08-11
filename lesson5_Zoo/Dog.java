@@ -1,20 +1,16 @@
 package repo_java1_Home_Work.lesson5_Zoo;
 
 public class Dog extends Animal {
-    static float swimLen;
+    protected final float swimLen;
 
-    Dog(String name, float runLen, float swimLen, float jumpHeig) {
+    Dog(String name, float runLen, float jumpHeig, float swimLen) {
         super(name, runLen, jumpHeig);
         this.swimLen = swimLen;
     }
 
     @Override
-    public float run(float length) {
-        return 150;
-    }
-
-    protected float swimming(float lengthObs) {
-        return lengthObs;
+    protected boolean swimming(float lengthObs) {
+        return swimLen >= lengthObs;
     }
 }
 

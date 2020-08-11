@@ -7,7 +7,7 @@ public class Cat extends Animal{
     }
 
     @Override
-    public float run (float length){
-        return 100;
+    protected boolean swimming(float lengthObs){
+        return false;
     }
 }

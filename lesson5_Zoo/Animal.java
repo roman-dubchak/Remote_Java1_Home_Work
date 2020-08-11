@@ -1,23 +1,24 @@
 package repo_java1_Home_Work.lesson5_Zoo;
 
-public class Animal {
-    protected String name;
-    protected float runLen;
-    protected float jumpHeig;
+public abstract class Animal {
+    protected final String name;
+    protected final float runLen;
+    protected final float jumpHeig;
 
     protected Animal (String name, float runLen, float jumpHeig){
         this.name = name;
         this.runLen = runLen;
-        this.jumpHeig =jumpHeig;
+        this.jumpHeig = jumpHeig;
     }
 
-    protected float run(float lengthObs){
-        return lengthObs;
+    protected boolean run(float lengthObs){
+        return runLen >= lengthObs;
     }
 
-    protected float jump(float heightObs){
-        return heightObs;
-
+    protected boolean jump(float heightObs){
+        return jumpHeig >= heightObs;
     }
+
+    protected abstract boolean swimming(float lengthObs);
 
 }
