@@ -4,7 +4,7 @@ import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 
 public class main {
     public static void main(String[] args) {
-        Dog d = new Dog("Bobick", 500f, 0.5f, 10f);
+        Dog d = new Dog("Bobick", 500f, 10f, 0.5f);
         Cat c = new Cat("Gera", 200f, 2f);
 
         Animal[] zoo = {d, c};

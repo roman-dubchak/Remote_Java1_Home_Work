@@ -10,6 +10,7 @@ public class Dog extends Animal {
 
     @Override
     protected boolean swimming(float lengthObs) {
+        float swimLen = 0.5f;
         return swimLen >= lengthObs;
     }
 }
