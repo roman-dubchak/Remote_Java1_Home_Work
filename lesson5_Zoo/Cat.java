@@ -2,12 +2,12 @@ package repo_java1_Home_Work.lesson5_Zoo;
 
 public class Cat extends Animal{
 
-    Cat (String name, float runLen, float jumpHeig){
-        super (name, runLen, jumpHeig);
+    Cat (String name, float runLen, float jumpHeig, float swimLen) {
+        super(name, runLen, jumpHeig, swimLen);
     }
 
     @Override
-    protected boolean swimming(float lengthObs){
-        return false;
+    protected int swimming(float lengthObs){
+        return Animal.SWM_WTF;
     }
 }
