@@ -86,6 +86,7 @@ public class SettingsWindow extends JFrame {
     private void btnStartClick(){
         int fieldSize = slideFieldSize.getValue();
         int winLen = slideWinLen.getValue();
+
         int gameMode;
         if (humVSAI.isSelected()){
             gameMode = Map.MODE_HVA;
@@ -94,7 +95,7 @@ public class SettingsWindow extends JFrame {
         } else
         throw new RuntimeException("Unexpected game mode!");
 
-        gameWindow.startNewGame(gameMode, fieldSize, fieldSize, winLen);
+        gameWindow.applySettings(gameMode, fieldSize, fieldSize, winLen);
 
         setVisible(false);
     }

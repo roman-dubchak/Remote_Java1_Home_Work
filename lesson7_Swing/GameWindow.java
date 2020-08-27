@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class GameWindow extends JFrame {
+
     private static final int WIN_WIDTH = 507;
     private static final int WIN_HEIGHT = 555;
     private static final int WIN_POSX = 650;
@@ -19,6 +20,7 @@ public class GameWindow extends JFrame {
         setSize(WIN_WIDTH,WIN_HEIGHT);
         setLocation(WIN_POSX, WIN_POSY);
         setTitle("TicTacToe");
+        setResizable(false);
 //        setLocationRelativeTo(null); - по центру экрана
         JButton btnStartGame = new JButton("Start new game");
         JButton btnExit = new JButton("Exit");
@@ -49,7 +51,7 @@ public class GameWindow extends JFrame {
         setVisible(true);
     }
 
-    void startNewGame(int mode, int fieldSizeX, int fieldSizeY, int winLength) {
+    void applySettings(int mode, int fieldSizeX, int fieldSizeY, int winLength) {
         map.startNewGame(mode,fieldSizeX,fieldSizeY,winLength);
     }
 }
